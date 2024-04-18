@@ -1,0 +1,46 @@
+{
+    "name": "SafeZone",
+    "short_name": "SfZn",
+    "icons": [
+      {
+        "src": "assets/img/29.png",
+        "sizes": "29x29",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/img/40.png",
+        "sizes": "40x40",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/img/57.png",
+        "sizes": "57x57",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/img/58.png",
+        "sizes": "58x58",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/img/60.png",
+        "sizes": "60x60",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "assets/img/180.png",
+        "sizes": "180x180",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/img/1024.png",
+        "sizes": "1024x1024",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "telaLogin.html",
+    "display": "standalone",
+    "background_color": "#bd6614",
+    "theme_color": "#5f5f60"
+  }

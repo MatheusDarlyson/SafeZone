@@ -1,0 +1,30 @@
+# Squad 06 - SafeZone
+# Matheus Crasto, Ozias Nascimento, Matheus Darlyson, Jorge Luis, Augusto Dantas, André Santos
+
+
+O SafeZone é um aplicativo dedicado a promover a segurança no ambiente de trabalho, 
+fornecendo aos colaboradores uma ferramenta abrangente para identificar, relatar e mitigar potenciais pontos de risco
+e situações de perigo.
+
+Nosso objetivo é garantir a segurança dos colaboradores, permitindo a identificação proativa de 
+condições perigosas e a rápida resposta a emergências.
+
+###################################################
+
+
+Versão v1.0
+
+Funcionalidades :
+
+O sistema permite realizar Cadastro e Login de colaboradores, bem como cadastro de pontos de riscos 
+que podem ser identificados.
+No cadastro de pontos de risco o colaborador tem acesso a uma série de campos que deve preencher, desde turno até inserir imagens e localização do ponto.
+
+✔️ O site se encontra responsivo e dentro das métricas de PWA.
+
+
+Próximas Versões:
+
+** Melhorar estilização da página;
+** Criar / Inserir visualização de mapa (e/ou planta baixa) da empresa em questão, com os pontos de risco demarcados para atenção da equipe de segurança do trabalho;
+** Inserir botão de emergência, acionando ambulância e/ou corpo de bombeiros.

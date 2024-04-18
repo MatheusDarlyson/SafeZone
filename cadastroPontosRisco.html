@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#bd6614" />
+
+    <title>Cadastro de Pontos de Risco</title>
+
+    <link rel="shortcut icon" href="/assets/icone2.jpeg" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="stylesGeral.css">
+</head>
+
+<body>
+    <div class="riscoContainer">
+        <h2>Cadastro de Pontos de Risco</h2>
+        <form id="cadastroPontoRiscoForm" action="/riscosCadastrados.html" method="POST">
+            <div class="form-group">
+                <label for="area">Setor / Área:</label>
+                <input type="text" id="area" name="area" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Data:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="shift">Turno:</label>
+                <select id="shift" name="shift" required>
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Descrição:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="location">Informe sua localização:</label>
+                <button id="askButton">Permita coleta de localização</button>
+                <div id="target"></div>
+            </div>
+            <div class="form-group">
+                <label for="img">Insira imagens:</label>
+                <p><button onclick="takePhoto()">Take Photo!</button></p>
+                <p><img id="imageTag" width="240" height="180"></p>
+                <div id="target"></div>
+                
+                <p><button onclick="getStream()">Grab video</button></p>
+                <p><video autoplay style="height: 180px; width: 240px;"></video></p>
+            </div>
+            <button type="submit" class="btn">Cadastrar</button>
+            <script src="/scriptsGeral.js"></script>
+</body>
+
+</html>
