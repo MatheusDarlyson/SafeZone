@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Suponha que o cadastro foi realizado com sucesso
             alert("Cadastro realizado com sucesso!");
             // Redireciona para a tela de login após o cadastro
-            window.location.href = "/telaLogin.html";
+            window.location.href = "/index.html";
         });
     }
 });
