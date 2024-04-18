@@ -204,41 +204,47 @@ body {
 
 /* Código para pagina riscosCadastrados */
 
-.container {
+.riscoContainer {
     background-image: linear-gradient(to bottom right, #ff8c00,#bd6614);
-    padding: 30px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 600px;
+    max-width: 600px;
+    width: 90%;
     margin: 50px auto;
     text-align: center;
     color: var(--color-ligth-yellow);
 }
 
-.container h2 {
+.form-group {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.riscoContainer h2 {
     margin-bottom: 20px;
 }
 
-.container ul {
+.riscoContainer ul {
     list-style: none;
     padding: 0;
 }
 
-.container ul li {
+.riscoContainer ul li {
     margin-bottom: 20px;
 }
 
-.container ul li strong {
+.riscoContainer ul li strong {
     font-weight: bold;
 }
 
-.container video {
+.riscoContainer video {
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
     margin-bottom: 10px;
 }
 
-.container img {
+.riscoContainer img {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
@@ -248,7 +254,7 @@ body {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
-    border: none;
+    border:100%;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -257,3 +263,4 @@ body {
 .btn:hover {
     background-color: #0056b3;
 }
+
