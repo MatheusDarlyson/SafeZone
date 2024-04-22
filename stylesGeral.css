@@ -23,16 +23,16 @@ h1{
 }
 
 h2{
-    font-family: var(--font-texto);
+    font-family: var(--font-titulo);
     margin-top: 0;
 }
 
 p{
-    font-family: var(--font-alternative);
+    font-family: var(--font-titulo);
 }
 
 a{
-    font-family: var(--font-alternative);
+    font-family: var(--font-titulo);
     text-decoration: none;
 }
 
@@ -79,7 +79,7 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-family: var(--font-titulo);
 }
 .form-group input {
     width: 100%;
@@ -87,6 +87,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-style: italic;
 }
 .btn {
     padding: 10px 20px;
@@ -95,7 +96,9 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: ease-in-out;
+    font-family: var(--font-titulo);
+
 }
 .btn:hover {
     background-color: #0056b3;
@@ -147,6 +150,7 @@ body {
 .btn:hover {
     background-color: #0056b3;
 }
+
 
 
 /* Código para cadastroPontosRisco */
@@ -264,3 +268,110 @@ body {
     background-color: #0056b3;
 }
 
+/* Estilos da homePage */
+
+.header{
+    background-color: transparent;
+    padding: 15px;
+    margin-bottom: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logoText{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    max-width: 5%;
+    height: 20%;
+    margin-right: 10px;
+}
+
+.header h1{
+    margin: 0;
+}
+
+i#burguer{
+    display: flex;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 0;
+    justify-content: center;
+}
+
+i#burguer:hover{
+    cursor: pointer;
+}
+
+.mainMenu menu{
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#itens li {
+    margin: 5px 10px;
+}
+
+#itens a {
+    text-decoration: none;
+    color: #333; /* Cor do texto */
+}
+
+#itens a:hover {
+    color: var(--color-orange); /* Cor do texto no hover */
+}
+
+/* Media Query para tornar responsivo */
+@media (max-width: 768px) {
+    .logoAndText {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-bottom: 5px;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    .mainMenu {
+        position: relative;
+    }
+
+    i#burguer {
+        display: flex;
+    }
+
+    #itens {
+        display: none;
+        position: absolute;
+        top: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        flex-direction: column;
+    }
+
+    #itens li {
+        margin: 5px 0;
+    }
+
+    #itens a {
+        padding: 10px;
+    }
+
+    #itens a:hover {
+        background-color: #f0f0f0;
+    }
+
+    #itens.active {
+        display: flex;
+    }
+}
