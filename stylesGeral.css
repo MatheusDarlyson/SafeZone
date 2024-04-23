@@ -327,6 +327,17 @@ i#burguer:hover{
     color: var(--color-orange); /* Cor do texto no hover */
 }
 
+header {
+    top: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between; /* Alinha os itens na div superior */
+    align-items: center;
+    padding: 10px 20px; /* Adiciona algum espaçamento interno */
+    background-color:transparent/* Cor de fundo do header */
+  }
+
+
 /* Media Query para tornar responsivo */
 @media (max-width: 768px) {
     .logoAndText {
@@ -375,3 +386,5 @@ i#burguer:hover{
         display: flex;
     }
 }
+
+
