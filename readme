@@ -12,13 +12,14 @@ condições perigosas e a rápida resposta a emergências.
 ###################################################
 
 
-Versão v1.0
+Versão v2.0
 
 Funcionalidades :
 
 O sistema permite realizar Cadastro e Login de colaboradores, bem como cadastro de pontos de riscos 
 que podem ser identificados.
 No cadastro de pontos de risco o colaborador tem acesso a uma série de campos que deve preencher, desde turno até inserir imagens e localização do ponto.
+Visualização do mapa com uso de API GoogleMaps
 
 ✔️ O site se encontra responsivo e dentro das métricas de PWA.
 
@@ -26,5 +27,8 @@ No cadastro de pontos de risco o colaborador tem acesso a uma série de campos q
 Próximas Versões:
 
 ** Melhorar estilização da página;
-** Criar / Inserir visualização de mapa (e/ou planta baixa) da empresa em questão, com os pontos de risco demarcados para atenção da equipe de segurança do trabalho;
-** Inserir botão de emergência, acionando ambulância e/ou corpo de bombeiros.
+** Inserir botão de emergência, acionando ambulância e/ou corpo de bombeiros;
+** Criar página de visualização dos riscos;
+** Alterar paleta de cores;
+** Implantação do menu Hambúrguer;
+** Visualização da Planta Baixa para o usuário;
