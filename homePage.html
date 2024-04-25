@@ -16,31 +16,45 @@
 
 <body>
     <header>
-
         <div class="header">
             <div class="logoText">
                 <img class="logo" src="/assets/icone2.jpeg" alt="SafeZone logo">
                 <h1>SafeZone</h1>
             </div>
 
-            <div class="mainMenu">
-                <i id="burguer" onclick="clickMenu()" class="material-symbols-outlined">
+            <!-- <div class="mainMenu">
+            <i id="burguer" onclick="clickMenu()" class="material-symbols-outlined">
                     menu
                 </i>
                 <menu id="itens">
                     <li><a href="/cadastroPontosRisco.html">Cadastrar Risco</a></li>
                     <li><a href="/riscosCadastrados.html">Visualizar Riscos</a></li>
                     <li><a href="/MapApi/index.html">Visualizar Mapa</a></li>
+
                 </menu>
             </div>
-        </div>
-
+        </div> -->
     </header>
+
+    <section class="Corpo">
+        <section class="conteudoHome">
+            <h2>Olá, colaborador</h2>
+            <p>Bem-vindo à sua SafeZone! Aqui você pode cadastrar pontos de risco, visualizar riscos cadastrados,
+                acessar o mapa de riscos e muito mais.</p>
+            <a href="/cadastroPontosRisco.html" class="btn">Cadastrar Ponto de Risco</a>
+            <a href="/riscosCadastrados.html" class="btn">Visualizar Riscos Cadastrados</a>
+            <a href="/MapApi/index.html" class="btn">Visualizar Mapa de Riscos</a>
+            <a href="tel:192" class="btn"> Acionar SAMU</a> 
+            <a href="tel:193" class="btn" >Acionar Corpo de Bombeiros</a>
+        </section>
+    </section>
+
+
 
     <script src="/scriptsGeral.js"></script>
 
     <!-- Script do botão de menu -->
-    <script>
+    <!-- <script>
         function clickMenu() {
             if (itens.style.display == 'block') {
                 itens.style.display = 'none'
@@ -48,7 +62,7 @@
                 itens.style.display = 'block'
             }
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

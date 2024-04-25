@@ -3,6 +3,15 @@
 
 :root{
   --font-titulo: "MontSerrat", sans-serif;
+  --color-orange: #bd6614;
+    --color-gray: #5f5f60;
+    --color-brown: #4f2609;
+    --color-light_red: #f87b60;
+    --color-ligth-yellow: #ffd06b;
+    --color-cream: #ebe4d1;
+    --color-gray2: #b4b4b3;
+    --color-darkblue: #26577c;
+    --color-orange: #e55604
 }
 body {
   background-image: url('/background1.jpeg');
@@ -23,47 +32,42 @@ body {
     margin: 25;
     padding: 0;
     font-family: var(--font-titulo);
+    background-color: var(--color-gray2);
+
   }
 
 
-i#burguer {
-    font-size: 24px; /* Tamanho do ícone */
-    color: #fff; /* Cor do ícone */
-    cursor: pointer; /* Altera o cursor para parecer um botão clicável */
+  i#burguer{
     display: flex;
+    text-align: center;
+    padding: 25px;
     margin-bottom: 0;
-    justify-content: right;
-    transition: color 0.3s ease;
+    justify-content: center;
 }
 
-i#burguer:hover {
-    color: #bd6614; /* Altera a cor do ícone quando hover */
+i#burguer:hover{
+    cursor: pointer;
 }
-
 
 .mainMenu menu{
-    display: none;
-    padding: 0;
-    margin: 0;
+  display: none;
+  list-style-type: none;
 }
 
 #itens li {
-    margin: 5px 10px;
+  margin: 5px 10px;
 }
 
 #itens a {
-    text-decoration: none;
-    color: #333; /* Cor do texto */
-}
-
-#itens a:hover {
-    color: var(--color-orange); /* Cor do texto no hover */
+  text-decoration: none;
+  color: #333; /* Cor do texto */
 }
 
 header {
+  /* background-color: var(--color-gray2); */
   display: flex;
-  justify-content: space-between; /* Alinha os itens na div superior */
+  justify-content: space-between; 
   align-items: center; /* Centraliza os itens verticalmente */
   padding: 10px 20px; /* Adiciona algum espaçamento interno */
-  background-color:transparent/* Cor de fundo do header */
+
 }

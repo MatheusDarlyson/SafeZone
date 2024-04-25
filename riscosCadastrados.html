@@ -11,15 +11,49 @@
     <link rel="stylesheet" href="stylesGeral.css">
 </head>
 <body>
-
-     <div class="container">
+    <div class="custom-container">
         <h2>Riscos Cadastrados</h2>
-        <div id="listaRiscos"></div>
+        <div id="custom-table">
+            <table id="tabela">
+                <thead>
+                    <tr>
+                        <th>Setor / Área</th>
+                        <th>Data</th>
+                        <th>Turno</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados da tabela serão inseridos aqui -->
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Função para carregar os dados salvos no localStorage e preencher a tabela
+            function carregarDados() {
+                const corpoTabela = document.querySelector("#tabela tbody");
+                corpoTabela.innerHTML = ""; // Limpar a tabela antes de atualizar
 
-    
-    <script src="/scriptsGeral.js"></script>
+                const riscosSalvos = JSON.parse(localStorage.getItem("riscos")) || [];
+                riscosSalvos.forEach(risco => {
+                    const novaLinha = document.createElement("tr");
+                    novaLinha.innerHTML = `
+                        <td>${risco.area}</td>
+                        <td>${risco.data}</td>
+                        <td>${risco.turno}</td>
+                        <td>${risco.descricao}</td>
+                    `;
+                    corpoTabela.appendChild(novaLinha);
+                });
+            }
+
+            // Chamar a função para carregar os dados ao carregar a página
+            carregarDados();
+        });
+    </script>
 </body>
+
 </html>

@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,300;1,500&family=Quicksand:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 /* Códigos Gerais (root) */
 
@@ -8,42 +9,57 @@
     --color-brown: #4f2609;
     --color-light_red: #f87b60;
     --color-ligth-yellow: #ffd06b;
-    --font-titulo: "MontSerrat", sans-serif;
+    --color-cream: #ebe4d1;
+    --color-gray2: #b4b4b3;
+    --color-darkblue: #26577c;
+    --color-orange: #e55604
+    --font-titulo: "MontSerrat";
     --font-texto: "QuickSand", sans-serif;
     --font-alternative: 'Poppins', sans-serif;
 }
 
 html{
     scroll-behavior: smooth;
+    font-family: var(--font-titulo);
 }
 
 h1{
-    font-family: var(--font-titulo);
     margin-bottom: 10px;
 }
 
 h2{
-    font-family: var(--font-titulo);
     margin-top: 0;
 }
 
-p{
-    font-family: var(--font-titulo);
-}
 
 a{
-    font-family: var(--font-titulo);
     text-decoration: none;
+}
+
+footer {
+    color: #ffffff;
+    padding: 20px; 
+    text-align: center; 
+    margin-top: auto;
+    justify-content: center;
+}
+
+
+footer p {
+    margin: 0; /* Remove margem padrão do parágrafo */
+    font-size: 14px; /* Tamanho do texto */
+    align-items: center;
 }
 
 @media screen and (max-width: 469px) {
     form {
+
       max-width: 90%;
     }
   }
 
-/* Códigos para telaLogin.html (index.html)*/
 
+  /* Códigos para telaLogin.html (index.html)*/
 
 body {
     background-image: url('/background1.jpeg');
@@ -60,8 +76,7 @@ body {
 .loginContainer {
     display: flex;
     flex-direction: column;
-    /* background-color: var(--color-orange); */
-    background-image: linear-gradient(to bottom right, #ff8c00,#bd6614);
+    background-image: linear-gradient(to bottom right, #ff8c00,#bd6614);  
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -69,7 +84,7 @@ body {
     margin: 50px auto;
     text-align: center;
     justify-content: center;
-    color: var(--color-ligth-yellow);
+    color: var(--color-cream);
 }
 
 .form-group {
@@ -114,7 +129,12 @@ body {
     width: 300px;
     margin: 50px auto;
     text-align: center;
-    color: var(--color-ligth-yellow);
+    color: var(--color-cream);
+    font-family: var(--font-titulo);
+}
+
+.cadastroContainer p{
+    font-size: large;
 }
 
 .form-group {
@@ -138,6 +158,7 @@ body {
 }
 
 .btn {
+    margin: 15px;
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
@@ -145,32 +166,39 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size:large;
 }
+
+
 
 .btn:hover {
     background-color: #0056b3;
 }
 
-
-
 /* Código para cadastroPontosRisco */
 
-
 .riscoContainer {
-    background-image: linear-gradient(to bottom right, #ff8c00,#bd6614);
+    background-image: linear-gradient(to bottom right, #ff8c00, #bd6614);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 450px;
+    max-width: 500px;
     margin: 50px auto;
     text-align: center;
-    color: var(--color-ligth-yellow);
+    color: #0056b3;
+    position: relative; /* Adicionamos position: relative para posicionar o ícone do menu */
+}
+
+.riscoContainer h2 {
+    color: var(--color-cream);
 }
 
 .form-group {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
+    color: var(--color-cream);
 }
 
 .form-group label {
@@ -179,7 +207,9 @@ body {
     margin-right: 10px;
 }
 
-.form-group input, .form-group select, .form-group textarea {
+.form-group input,
+.form-group select,
+.form-group textarea {
     flex: 2;
     padding: 8px;
     border: 1px solid #ccc;
@@ -206,59 +236,86 @@ body {
     background-color: #0056b3;
 }
 
-/* Código para pagina riscosCadastrados */
-
-.riscoContainer {
-    background-image: linear-gradient(to bottom right, #ff8c00,#bd6614);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 90%;
-    margin: 50px auto;
+i#burguer {
+    position: absolute; /* Adicionamos position: absolute para posicionar o ícone */
+    top: 15px; /* Posição em relação ao topo da div .mainMenu */
+    right: 0;
+    display: flex;
     text-align: center;
-    color: var(--color-ligth-yellow);
+    padding: 15px;
+    margin-bottom: 0;
+    justify-content: center;
+    z-index: 999; /* Garante que o ícone fique sobreposto ao conteúdo da página */
+}
+
+i#burguer:hover {
+    cursor: pointer;
+}
+
+.mainMenu menu {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#itens {
+    position: absolute;
+    right: 0; /* Alinha o menu à direita da div .mainMenu */
+    background-color: #fff; /* Define a cor de fundo do menu */
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#itens a {
+    text-decoration: none;
+    color: #333; /* Cor do texto */
+}
+
+#itens a:hover {
+    color: var(--color-orange); /* Cor do texto no hover */
+}
+
+/* Adaptação para telas menores */
+@media screen and (max-width: 600px) {
+    .riscoContainer {
+        padding: 20px; /* Reduz o padding */
+    }
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    color: var(--color-cream);
+}
+
+.form-group label {
+    flex: 1;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .form-group {
     margin-bottom: 5px;
-    text-align: left;
-}
-
-.riscoContainer h2 {
-    margin-bottom: 20px;
-}
-
-.riscoContainer ul {
-    list-style: none;
-    padding: 0;
-}
-
-.riscoContainer ul li {
-    margin-bottom: 20px;
-}
-
-.riscoContainer ul li strong {
-    font-weight: bold;
-}
-
-.riscoContainer video {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 10px;
-}
-
-.riscoContainer img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+    display: flex;
 }
 
 .btn {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
-    border:100%;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -268,10 +325,99 @@ body {
     background-color: #0056b3;
 }
 
+i#burguer {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    display: flex;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 0;
+    justify-content: center;
+    z-index: 999;
+}
+
+i#burguer:hover {
+    cursor: pointer;
+}
+
+.mainMenu menu {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#itens {
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#itens a {
+    text-decoration: none;
+    color: #333;
+}
+
+#itens a:hover {
+    color: var(--color-orange);
+}
+
+
+
+/* Código para pagina riscosCadastrados */
+.custom-container {
+    max-width: 100%; /* Alterado para ocupar a largura total */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-titulo);
+    font-size: large;
+}
+
+.custom-container h2{
+    text-align: center;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+/* Adaptação para telas menores */
+@media screen and (max-width: 600px) {
+    .custom-container {
+        padding: 10px; /* Reduz o padding */
+        font-size: medium; /* Ajusta o tamanho da fonte */
+    }
+
+    .custom-table th,
+    .custom-table td {
+        padding: 8px; /* Reduz o padding das células */
+    }
+}
+
 /* Estilos da homePage */
 
 .header{
-    background-color: transparent;
+    background-color: var(--color-gray2);
+    border-radius: 20px;
     padding: 15px;
     margin-bottom: auto;
     width: 100%;
@@ -295,36 +441,47 @@ body {
     margin: 0;
 }
 
-i#burguer{
-    display: flex;
-    text-align: center;
-    padding: 15px;
-    margin-bottom: 0;
-    justify-content: center;
+.Corpo {
+    display: flex; /* Utiliza flexbox para controlar o layout */
+    justify-content: center; /* Alinha o conteúdo ao centro horizontalmente */
+    align-items: flex-start; /* Alinha o conteúdo no topo */
+    padding-top: 20px; /* Adiciona um espaço acima do conteúdo */
 }
 
-i#burguer:hover{
-    cursor: pointer;
+.conteudoHome {
+    max-width: 600px; /* Define a largura máxima do conteúdo */
+    padding: 20px; /* Adiciona espaçamento interno */
+    text-align: center; /* Alinha o texto ao centro */
+    background-image:linear-gradient(to bottom,  #26577c, #ebe4d1, #b4b4b3);
 }
 
-.mainMenu menu{
-    display: none;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.conteudoHome h2 {
+    font-size: 24px; /* Define o tamanho da fonte do título */
+    color:var(--color-cream); /* Define a cor do texto do título */
 }
 
-#itens li {
-    margin: 5px 10px;
+.conteudoHome p {
+    font-size: 16px; 
+    color: #333; /* Define a cor do texto do parágrafo */
+    margin-bottom: 20px; /* Adiciona margem abaixo do parágrafo */
+    font-family: var(--font-titulo);
 }
 
-#itens a {
-    text-decoration: none;
-    color: #333; /* Cor do texto */
+.conteudoHome a.btn {
+    display: block; /* Transforma o link em bloco para ocupar toda a largura disponível */
+    width: 100%; /* Define a largura total */
+    max-width: 300px; /* Define a largura máxima */
+    margin: 10px auto; /* Centraliza horizontalmente e adiciona margem nas laterais */
+    padding: 10px 20px; /* Adiciona espaçamento interno */
+    background-color: #26577c; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    text-decoration: none; /* Remove sublinhado do link */
+    border-radius: 4px; /* Adiciona cantos arredondados */
+    transition: background-color 0.3s; /* Adiciona uma transição suave na mudança de cor de fundo */
 }
 
-#itens a:hover {
-    color: var(--color-orange); /* Cor do texto no hover */
+.conteudoHome a.btn:hover {
+    background-color: #0056b3; /* Altera a cor de fundo ao passar o mouse */
 }
 
 header {
@@ -386,5 +543,9 @@ header {
         display: flex;
     }
 }
+
+
+
+
 
 

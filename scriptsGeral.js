@@ -30,7 +30,8 @@ target.appendChild(newLocation);
 }
 
 if ('geolocation' in navigator) {
-document.getElementById('askButton').addEventListener('click', function () {
+document.getElementById('askButton').addEventListener('click', function (evento) {
+  evento.preventDefault();
   navigator.geolocation.getCurrentPosition(function (location) {
     appendLocation(location, 'fetched');
   });
@@ -52,7 +53,8 @@ function getUserMedia(options, successCallback, failureCallback) {
 
 var theStream;
 
-function getStream() {
+function getStream(evento) {
+  evento.preventDefault();
   if (!navigator.getUserMedia && !navigator.webkitGetUserMedia &&
     !navigator.mozGetUserMedia && !navigator.msGetUserMedia) {
     alert('User Media API not supported.');
@@ -78,7 +80,8 @@ function getStream() {
   });
 }
 
-function takePhoto() {
+function takePhoto(evento) {
+  evento.preventDefault();
   if (!('ImageCapture' in window)) {
     alert('ImageCapture is not available');
     return;
@@ -98,5 +101,4 @@ function takePhoto() {
     })
     .catch(err => alert('Error: ' + err));
 }
-
 
