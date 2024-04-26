@@ -1,54 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br"> 
+<html lang="pt-br">
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <meta name="theme-color" content="#bd6614"/>
 
-    <title>Mapa de Localização</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <meta name="theme-color" content="#bd6614" />
 
-    <link rel="stylesheet" type="text/css" href="/MapApi/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <script type="module" src="/MapApi/script.js"></script>
-    <link rel="manifest" href="/manifest.json">
-    <link rel="shortcut icon" href="/assets/icone2.jpeg" type="image/x-icon">
+  <title>Mapa de Localização</title>
+
+  <link rel="stylesheet" type="text/css" href="/MapApi/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script type="module" src="/MapApi/script.js"></script>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="/assets/icone2.jpeg" type="image/x-icon">
 
 
-  </head>
-  <body>
-    <header>
-      <h1>SafeZone</h1>
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <div class="logoText">
+        <img class="logo" src="/assets/icone2.jpeg" alt="SafeZone logo">
+        <h1>SafeZone</h1>
+      </div>
       <div class="mainMenu">
         <i id="burguer" onclick="clickMenu()" class="material-symbols-outlined">
-            menu
+          menu
         </i>
         <menu id="itens">
-            <li><a href="/homePage.html">HomePage</a></li>
-            <li><a href="/riscosCadastrados.html">Visualizar Riscos</a></li>
-            <li><a href="/MapApi/index.html">Visualizar Mapa</a></li>
-            <li><a href="tel:192">Acionar SAMU</a></li>
-            <li><a href="tel:193">Acionar Corpo de Bombeiros</a></li>
+          <li><a href="/homePage.html">HomePage</a></li>
+          <li><a href="/riscosCadastrados.html">Visualizar Riscos</a></li>
+          <li><a href="/MapApi/index.html">Visualizar Mapa</a></li>
+          <li><a href="tel:192">Acionar SAMU</a></li>
+          <li><a href="tel:193">Acionar Corpo de Bombeiros</a></li>
         </menu>
-    </div>
-    </header>
-    <!--The div element for the map -->
-    <div id="map"></div>
+      </div>
+  </header>
+  <!--The div element for the map -->
+  <div id="map"></div>
 
-    <!-- prettier-ignore -->
-    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-        ({key: "AIzaSyDVNAagJUSGqaGhFbiSJF5YGUcZeCdFxI0", v: "beta"});</script>
+  <!-- prettier-ignore -->
+  <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+      ({ key: "AIzaSyDVNAagJUSGqaGhFbiSJF5YGUcZeCdFxI0", v: "beta" });</script>
 
-<script>
-  function clickMenu(){
-      if (itens.style.display == 'block'){
-          itens.style.display = 'none'
+  <script>
+    function clickMenu() {
+      if (itens.style.display == 'block') {
+        itens.style.display = 'none'
       } else {
-          itens.style.display = 'block'
+        itens.style.display = 'block'
       }
-  }
-</script>
+    }
+  </script>
 
-  </body>
+</body>
+
 </html>

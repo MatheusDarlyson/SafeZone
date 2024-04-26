@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="stylesGeral.css">
 </head>
 <body>
+    <header>
+    <div class="header">
+        <div class="logoText">
+            <img class="logo" src="/assets/icone2.jpeg" alt="SafeZone logo">
+            <h1>SafeZone</h1>
+        </div>
+    </div>  
+    </header>   
+
     <div class="custom-container">
         <h2>Riscos Cadastrados</h2>
         <div id="custom-table">
@@ -21,6 +30,7 @@
                         <th>Data</th>
                         <th>Turno</th>
                         <th>Descrição</th>
+                        <th>Ações</th> <!-- Nova coluna para ações -->
                     </tr>
                 </thead>
                 <tbody>
@@ -38,13 +48,17 @@
                 corpoTabela.innerHTML = ""; // Limpar a tabela antes de atualizar
 
                 const riscosSalvos = JSON.parse(localStorage.getItem("riscos")) || [];
-                riscosSalvos.forEach(risco => {
+                riscosSalvos.forEach((risco, index) => {
                     const novaLinha = document.createElement("tr");
                     novaLinha.innerHTML = `
                         <td>${risco.area}</td>
                         <td>${risco.data}</td>
                         <td>${risco.turno}</td>
                         <td>${risco.descricao}</td>
+                        <td>
+                            <button onclick="editarRisco(${index})">Editar</button>
+                            <button onclick="excluirRisco(${index})">Excluir</button>
+                        </td>
                     `;
                     corpoTabela.appendChild(novaLinha);
                 });
@@ -52,8 +66,61 @@
 
             // Chamar a função para carregar os dados ao carregar a página
             carregarDados();
+
+            // Função para editar um risco
+            window.editarRisco = function(index) {
+                const riscos = JSON.parse(localStorage.getItem("riscos")) || [];
+                const risco = riscos[index];
+                window.editarRisco = function(index) {
+    const tabela = document.getElementById("tabela");
+    const corpoTabela = tabela.getElementsByTagName("tbody")[0];
+    const linha = corpoTabela.getElementsByTagName("tr")[index];
+    const celulas = linha.getElementsByTagName("td");
+
+    // Substituir os valores atuais por campos de entrada para edição
+    for (let i = 0; i < celulas.length - 1; i++) { // Ignorar a última célula (ações)
+        const valorAtual = celulas[i].innerText;
+        celulas[i].innerHTML = `<input type="text" value="${valorAtual}">`;
+    }
+
+    // Substituir o botão "Editar" pelo botão "Salvar"
+    const acoesCelula = celulas[celulas.length - 1];
+    acoesCelula.innerHTML = `<button onclick="salvarEdicao(${index})">Salvar</button>`;
+};
+
+window.salvarEdicao = function(index) {
+    const tabela = document.getElementById("tabela");
+    const corpoTabela = tabela.getElementsByTagName("tbody")[0];
+    const linha = corpoTabela.getElementsByTagName("tr")[index];
+    const celulas = linha.getElementsByTagName("td");
+
+    // Extrair os valores editados dos campos de entrada
+    const area = celulas[0].getElementsByTagName("input")[0].value;
+    const data = celulas[1].getElementsByTagName("input")[0].value;
+    const turno = celulas[2].getElementsByTagName("input")[0].value;
+    const descricao = celulas[3].getElementsByTagName("input")[0].value;
+
+    // Atualizar os valores na tabela
+    celulas[0].innerText = area;
+    celulas[1].innerText = data;
+    celulas[2].innerText = turno;
+    celulas[3].innerText = descricao;
+
+    // Substituir o botão "Salvar" pelo botão "Editar"
+    celulas[4].innerHTML = `<button onclick="editarRisco(${index})">Editar</button>`;
+};
+                console.log("Editar risco:", risco);
+            };
+
+            // Função para excluir um risco
+            window.excluirRisco = function(index) {
+                const riscos = JSON.parse(localStorage.getItem("riscos")) || [];
+                riscos.splice(index, 1);
+                localStorage.setItem("riscos", JSON.stringify(riscos));
+                // Recarregar os dados na tabela após a exclusão
+                carregarDados();
+            };
         });
     </script>
 </body>
-
 </html>

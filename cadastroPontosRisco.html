@@ -57,10 +57,10 @@
                 </div>
                 <div class="form-group">
                     <label for="img">Insira imagens:</label>
-                    <p><button onclick="takePhoto()">Take Photo!</button></p>
+                    <p><button type="button" onclick="takePhoto()">Take Photo!</button></p>
                     <p><img id="imageTag" width="240" height="180"></p>
                     <div id="target"></div>
-                    <p><button onclick="getStream()">Grab video</button></p>
+                    <p><button type="button" onclick="getStream()">Grab video</button></p>
                     <p><video autoplay style="height: 180px; width: 240px;"></video></p>
                 </div>
                 <button type="submit" class="btn">Cadastrar</button>
@@ -77,29 +77,29 @@
             }
         }
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const formularioCadastroRisco = document.getElementById("cadastroPontoRiscoForm");
+        document.addEventListener("DOMContentLoaded", function() {
+    const formularioCadastroRisco = document.getElementById("cadastroPontoRiscoForm");
 
-        formularioCadastroRisco.addEventListener("submit", function(evento) {
-            evento.preventDefault();
-            const area = document.getElementById("area").value;
-            const data = document.getElementById("date").value;
-            const turno = document.getElementById("shift").value;
-            const descricao = document.getElementById("description").value;
+    formularioCadastroRisco.addEventListener("submit", function(evento) {
+        evento.preventDefault();
+        const area = document.getElementById("area").value;
+        const data = document.getElementById("date").value;
+        const turno = document.getElementById("shift").value;
+        const descricao = document.getElementById("description").value;
 
-            // Salvar os dados no localStorage
-            salvarRisco(area, data, turno, descricao);
+        // Salvar os dados no localStorage
+        salvarRisco(area, data, turno, descricao);
 
-            // Redirecionar para a página de riscos cadastrados
-            window.location.href = "/riscosCadastrados.html";
-        });
-
-        function salvarRisco(area, data, turno, descricao) {
-            let riscos = JSON.parse(localStorage.getItem("riscos")) || [];
-            riscos.push({ area, data, turno, descricao });
-            localStorage.setItem("riscos", JSON.stringify(riscos));
-        }
+        // Redirecionar para a página de riscos cadastrados
+        window.location.href = "/riscosCadastrados.html";
     });
+
+    function salvarRisco(area, data, turno, descricao) {
+        let riscos = JSON.parse(localStorage.getItem("riscos")) || [];
+        riscos.push({ area, data, turno, descricao });
+        localStorage.setItem("riscos", JSON.stringify(riscos));
+    }
+});
 </script>
 
 

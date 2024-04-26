@@ -400,6 +400,8 @@ i#burguer:hover {
     text-align: left;
 }
 
+
+
 /* Adaptação para telas menores */
 @media screen and (max-width: 600px) {
     .custom-container {

@@ -23,7 +23,7 @@ body {
 
  #map {
     height: 80%;
-    width: 100%;
+    width: 78%;
  }  
 
   html,
@@ -32,35 +32,75 @@ body {
     margin: 25;
     padding: 0;
     font-family: var(--font-titulo);
-    background-color: var(--color-gray2);
+    /* background-color: var(--color-gray2); */
 
   }
 
-
-  i#burguer{
+  .logoText{
     display: flex;
-    text-align: center;
-    padding: 25px;
-    margin-bottom: 0;
-    justify-content: center;
+    align-items: center;
 }
 
-i#burguer:hover{
+.logo{
+    max-width: 5%;
+    height: 20%;
+    margin-right: 10px;
+}
+
+.header{
+  background-color: var(--color-gray2);
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1{
+    margin: 0;
+}
+
+
+  i#burguer {
+    position: absolute;
+    top: 15px;
+    display: flex;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 0;
+    justify-content: center;
+    z-index: 999;
+    left: 90%;
+}
+
+i#burguer:hover {
     cursor: pointer;
 }
 
-.mainMenu menu{
-  display: none;
-  list-style-type: none;
+.mainMenu menu {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-#itens li {
-  margin: 5px 10px;
+#itens {
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #itens a {
-  text-decoration: none;
-  color: #333; /* Cor do texto */
+    text-decoration: none;
+    color: #333;
+}
+
+#itens a:hover {
+    color: var(--color-orange);
 }
 
 header {

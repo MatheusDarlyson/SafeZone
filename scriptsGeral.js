@@ -53,8 +53,7 @@ function getUserMedia(options, successCallback, failureCallback) {
 
 var theStream;
 
-function getStream(evento) {
-  evento.preventDefault();
+function getStream() {
   if (!navigator.getUserMedia && !navigator.webkitGetUserMedia &&
     !navigator.mozGetUserMedia && !navigator.msGetUserMedia) {
     alert('User Media API not supported.');
@@ -80,8 +79,7 @@ function getStream(evento) {
   });
 }
 
-function takePhoto(evento) {
-  evento.preventDefault();
+function takePhoto() {
   if (!('ImageCapture' in window)) {
     alert('ImageCapture is not available');
     return;
@@ -101,4 +99,3 @@ function takePhoto(evento) {
     })
     .catch(err => alert('Error: ' + err));
 }
-
