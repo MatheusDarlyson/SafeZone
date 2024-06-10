@@ -65,19 +65,21 @@ function getStream() {
   };
 
   getUserMedia(constraints, function (stream) {
-    var mediaControl = document.querySelector('video');
-    if ('srcObject' in mediaControl) {
-      mediaControl.srcObject = stream;
-    } else if (navigator.mozGetUserMedia) {
-      mediaControl.mozSrcObject = stream;
-    } else {
-      mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
-    }
+    // var mediaControl = document.querySelector('video');
+    // if ('srcObject' in mediaControl) {
+    //   mediaControl.srcObject = stream;
+    // } else if (navigator.mozGetUserMedia) {
+    //   mediaControl.mozSrcObject = stream;
+    // } else {
+    //   mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
+    // }
     theStream = stream;
   }, function (err) {
     alert('Error: ' + err);
   });
 }
+
+window.onload = getStream;
 
 function takePhoto() {
   if (!('ImageCapture' in window)) {

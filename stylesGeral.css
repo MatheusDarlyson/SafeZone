@@ -276,8 +276,8 @@ i#burguer:hover {
     color: var(--color-orange); /* Cor do texto no hover */
 }
 
-/* Adaptação para telas menores */
-@media screen and (max-width: 600px) {
+/* Ajustes para telas menores */
+@media screen and (max-width: 412px) {
     .riscoContainer {
         padding: 20px; /* Reduz o padding */
     }
@@ -399,6 +399,21 @@ i#burguer:hover {
     background-color: #f2f2f2;
     text-align: left;
 }
+i#burguer {
+    position: absolute; /* Adicionamos position: absolute para posicionar o ícone */
+    top: 15px; 
+    right: 10%;
+    display: flex;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 0;
+    justify-content: center;
+    z-index: 999; /* Garante que o ícone fique sobreposto ao conteúdo da página */
+}
+
+i#burguer:hover {
+    cursor: pointer;
+}
 
 
 
@@ -452,18 +467,21 @@ i#burguer:hover {
 
 .conteudoHome {
     max-width: 600px; /* Define a largura máxima do conteúdo */
-    padding: 20px; /* Adiciona espaçamento interno */
+    margin-top: 15%;
+    padding: 10px;
+    border-radius: 10%;
     text-align: center; /* Alinha o texto ao centro */
     background-image:linear-gradient(to bottom,  #26577c, #ebe4d1, #b4b4b3);
 }
 
 .conteudoHome h2 {
-    font-size: 24px; /* Define o tamanho da fonte do título */
+    font-size: 50px; /* Define o tamanho da fonte do título */
     color:var(--color-cream); /* Define a cor do texto do título */
+    border-radius: 10rem;
 }
 
 .conteudoHome p {
-    font-size: 16px; 
+    font-size: 20px; 
     color: #333; /* Define a cor do texto do parágrafo */
     margin-bottom: 20px; /* Adiciona margem abaixo do parágrafo */
     font-family: var(--font-titulo);
